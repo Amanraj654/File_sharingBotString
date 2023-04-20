@@ -7,7 +7,7 @@ from pyrogram.errors import FloodWait
 from pyrogram import Client, filters, enums
 from pyrogram.types import Message
 
-from bot import Bot
+from bot import User
 from config import ADMINS, CHANNEL_ID, DISABLE_CHANNEL_BUTTON
 from helper_func import encode
 
