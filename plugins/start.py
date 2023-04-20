@@ -18,7 +18,7 @@ from database.database import add_user, del_user, full_userbase, present_user
 
 
 
-@Bot.on_message(filters.command('start') & filters.private & subscribed)
+@User.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
     if not await present_user(id):
@@ -118,7 +118,7 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 
     
     
-@Bot.on_message(filters.command('start') & filters.private)
+@User.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
@@ -152,13 +152,13 @@ async def not_joined(client: Client, message: Message):
         disable_web_page_preview = True
     )
 
-@Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
+@User.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
 async def get_users(client: Bot, message: Message):
     msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
     users = await full_userbase()
     await msg.edit(f"{len(users)} users are using this bot")
 
-@Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
+@User.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
     if message.reply_to_message:
         query = await full_userbase()
