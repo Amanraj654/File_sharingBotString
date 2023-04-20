@@ -11,10 +11,10 @@ from datetime import datetime
 
 from config import API_HASH, APP_ID, LOGGER, STRING_SESSION, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT
 
-class User = Client(
+class User(Client):
     def __init__(self):
         super().__init__(
-            name="Bot",
+            name="User",
             api_hash=API_HASH,
             api_id=APP_ID,
             plugins={
