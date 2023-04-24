@@ -10,25 +10,26 @@ from logging.handlers import RotatingFileHandler
 
 
 #Bot token @
-STRING_SESSION = os.environ.get("STRING_SESSION", "BQFyB34ACLmo_IMSCNqu0PettGOuwZmOGf7ENp552A0jmDEuUvppQ6Udz-M1acSifqb6JnlgOQrVqtc4yWzm7JzN7nD4rq7mz6nZb66P-89EsamC4LJfoz8Rpav0nJqXdk6YUQYDa7SLea9bWlvObkdHn9CNHCXONrGl2wietweL3Ht-UTqqf2T4B_XeVHdJD4zzNIU-Ttl6nsvD7n5DIpHGyRO-fSjA8DHIB_VgUVuUVFj4M3NsIrwk6WTHMnfu1k4x-F8N-JTItMdUO0Y0eQ2kg4GBXGzzZfRr7Zq_GJzjfo4iAiPldoCzKLr5HynLKPYkFUI_2yK46WMQ6-gOxV5JpdwtqAAAAAFyLQZFAQ")
+STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
 #Your API ID from my.telegram.org
-APP_ID = int(os.environ.get("APP_ID", "24250238"))
+APP_ID = int(os.environ.get("APP_ID", ""))
 
 #Your API Hash from my.telegram.org
-API_HASH = os.environ.get("API_HASH", "cb3f118ce5553dc140127647edcf3720")
+API_HASH = os.environ.get("API_HASH", "")
+")
 
 #Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001151586439"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
 
 #OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", "6175650047"))
+OWNER_ID = int(os.environ.get("OWNER_ID", ""))
 
 #Port
 PORT = os.environ.get("PORT", "8080")
 
 #Database 
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://Rajkumar:Rajkumar654@cluster0.ay3mov2.mongodb.net/?retryWrites=true&w=majority")
+DB_URI = os.environ.get("DATABASE_URL", "")
 DB_NAME = os.environ.get("DATABASE_NAME", "filesharexjjot")
 
 #force sub channel id, if you want enable force sub
@@ -40,7 +41,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link.")
 try:
     ADMINS=[]
-    for x in (os.environ.get("ADMINS", "5757528547").split()):
+    for x in (os.environ.get("ADMINS", "").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
